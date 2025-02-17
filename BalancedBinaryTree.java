@@ -2,6 +2,9 @@
 Given a binary tree, determine if it is 
 height-balanced
 
+Time Complexity: O(N) (Each node is visited once)
+Space Complexity: O(H) (Recursive call stack depth, where H is tree height)
+
 
 **/
 
