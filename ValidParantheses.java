@@ -28,6 +28,19 @@ Complexity: O(n)
  */
 
 /**
+Approach: Using a Stack
+Traverse the string character by character.
+Push open brackets (, {, [ onto the stack.
+When a closing bracket appears:
+If the stack is empty, return false (no matching opening bracket).
+Pop the top of the stack.
+If it doesn’t match the closing bracket, return false.
+At the end, if the stack is empty, return true (all brackets matched correctly).
+
+*/
+
+
+/**
 Approach: Using a Stack (LIFO Data Structure)
 We use a stack to store opening brackets. When a closing bracket appears:
 
