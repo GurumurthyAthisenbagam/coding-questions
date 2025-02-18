@@ -22,22 +22,21 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
-    public ListNode middleNode(ListNode head) {
-        ListNode fastNode = head;
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
         ListNode slowNode = head;
+        ListNode fastNode = head;
 
-        int counter =0;
+        while (fastNode != null && fastNode.next != null) {
 
 
-        while (fastNode!=null && fastNode.next != null) {
-
-            counter ++;
             slowNode = slowNode.next;
             fastNode = fastNode.next.next;
+            if(fastNode == slowNode) return true;
 
         }
-
-    return slowNode;
+        return false;
     }
 }
+
