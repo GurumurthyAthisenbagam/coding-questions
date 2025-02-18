@@ -47,16 +47,16 @@ class Solution {
         
     }
 
-    public int[][] dfs(int[][] image, int row, int col, int newColor, int oldColor) {
+    public void dfs(int[][] image, int row, int col, int newColor, int oldColor) {
        
 
        if(row < 0 || row > image.length-1 || col<0 ||col > image[0].length-1) {
-        return image;
+        return;
        }
 
        if(image[r][c] != oldColor) 
         {
-             return image;
+             return;
         }
 
       image[row][col] = newColor;
@@ -67,8 +67,6 @@ class Solution {
        dfs(image,row,col+1, newColor, oldColor);
        dfs(image,row-1,col, newColor, oldColor);
        dfs(image,row+1,col, newColor, oldColor);
-
-       return image;
 
     }
 
