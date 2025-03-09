@@ -1,3 +1,8 @@
+/**
+O(nlog(k)) 
+n is size of matrix
+k is the size of maxHeap - O(log K)
+**/
 class Solution {
     public int kthSmallest(int[][] matrix, int k) {
 
