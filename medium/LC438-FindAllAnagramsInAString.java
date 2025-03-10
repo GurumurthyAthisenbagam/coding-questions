@@ -49,3 +49,60 @@ class Solution {
         return true;
     }
 }
+
+
+/**
+import java.util.ArrayList;
+import java.util.List;
+
+public class FindAllAnagrams {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+        if (s.length() < p.length()) return result;
+
+        int[] p_count = new int[26];
+        int[] s_count = new int[26];
+
+        // Fill the frequency array for p
+        for (char c : p.toCharArray()) {
+            p_count[c - 'a']++;
+        }
+
+        int windowSize = p.length();
+
+        // Fill the first window
+        for (int i = 0; i < windowSize; i++) {
+            s_count[s.charAt(i) - 'a']++;
+        }
+
+        // Check the first window
+        if (matches(p_count, s_count)) {
+            result.add(0);
+        }
+
+        // Move the sliding window across s
+        for (int i = windowSize; i < s.length(); i++) {
+            // Include the next character in the window
+            s_count[s.charAt(i) - 'a']++;
+
+            // Exclude the character left out of the window
+            s_count[s.charAt(i - windowSize) - 'a']--;
+
+            // Check if current window is an anagram of p
+            if (matches(p_count, s_count)) {
+                result.add(i - windowSize + 1);
+            }
+        }
+
+        return result;
+    }
+
+    // Helper function to compare two frequency arrays
+    private boolean matches(int[] p_count, int[] s_count) {
+        for (int i = 0; i < 26; i++) {
+            if (p_count[i] != s_count[i]) return false;
+        }
+        return true;
+    }
+}
+**/
