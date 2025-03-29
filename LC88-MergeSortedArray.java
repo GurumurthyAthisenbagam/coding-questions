@@ -6,7 +6,7 @@ second → last element in nums2: n - 1
 
 index → last index of nums1: m + n - 1
 
-Compare nums1[p1] and nums2[p2] from the back and fill nums1[p] from the end to start. This avoids overwriting.
+Compare nums1[first] and nums2[second] from the back and fill nums1[index] from the end to start. This avoids overwriting.
 */
 
 class Solution {
