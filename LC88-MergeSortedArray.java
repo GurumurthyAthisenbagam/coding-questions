@@ -1,7 +1,50 @@
 /**
+
+Use three pointers:
+first → last real element in nums1: m - 1
+second → last element in nums2: n - 1
+
+index → last index of nums1: m + n - 1
+
+Compare nums1[p1] and nums2[p2] from the back and fill nums1[p] from the end to start. This avoids overwriting.
+*/
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int first = m - 1;
+        int second = n - 1;
+        int index = m + n - 1;
+
+        // Merge from the back
+        while (first >= 0 && second >= 0) {
+            if (nums1[first] > nums2[second]) {
+                nums1[index--] = nums1[first--];
+            } else {
+                nums1[index--] = nums2[second--];
+            }
+        }
+
+        // If nums2 has remaining elements
+        while (second >= 0) {
+            nums1[index--] = nums2[second--];
+        }
+
+        // No need to copy from nums1 — remaining nums1 values are already in place
+    }
+}
+
+
+
+
+
+
+
+
+
+/**
 Start from ends of array and sort in descending order
 Start filling from the end of first array which has space for m+n. 
- */
+ 
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
 
@@ -43,3 +86,4 @@ class Solution {
         }
     }
 }
+*/
