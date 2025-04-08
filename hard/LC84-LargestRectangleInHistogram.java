@@ -1,3 +1,17 @@
+/**
+Approach: Monotonic Increasing Stack
+
+Use a stack to keep track of indices of bars with increasing heights.
+When you see a lower bar, it means:
+Current bar is the right boundary for previous higher bars.
+Pop from the stack
+
+Calculate area: height of popped bar × width between left and current index.
+Keep updating maxArea.
+
+✅ We process each bar once = O(n) time.
+ */
+
 class Solution {
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
