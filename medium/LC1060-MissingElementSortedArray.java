@@ -2,10 +2,7 @@
 Between nums[i] and nums[i-1]:
 Missing numbers = nums[i] - nums[i-1] -1;
 
-✅ Why?
-nums[j] - nums[i] = total distance
-j - i = how many numbers are actually present
-Subtract to get missing numbers.
+k = k - missingNumbers;
 
 Go through the array
 Keep subtracting missing counts until you find where the k-th missing number lies.
