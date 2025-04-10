@@ -12,7 +12,7 @@ If count < k → ribbon length too big → try smaller ribbon.
  */
 class Solution {
     public int maxLength(int[] ribbons, int k) {
-        int left = 1; // cannot have left = 0
+        int left = 1; // cannot have left = 0, size 1 also we can cut the ribbon.
         int right = 0;
 
         for(int i: ribbons) {
