@@ -24,6 +24,32 @@ class Solution {
 }
 
 
+/***
+class Solution {
+    public int pivotIndex(int[] nums) {
+
+        int totalSum = 0;
+
+        for (int i=0; i<nums.length; i++) {
+            totalSum += nums[i];
+        }
+
+        int leftSum =0;
+        for (int i=0; i<nums.length; i++) {
+            // we exclude the nums[i] and check if values are equal. Because we need to exclude the value at pivot. 
+            if (totalSum - (leftSum + nums[i]) == leftSum) { 
+                return i;
+            }
+            leftSum += nums[i];
+        }
+
+        return -1;
+        
+    }
+}
+**/
+
+
 /**
 
 Compute total sum of array once.
